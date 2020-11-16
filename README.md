@@ -1,2 +1,1 @@
-# angularMoulo2
-Curso Angular
+# curso-angular6
