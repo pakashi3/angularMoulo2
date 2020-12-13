@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-  working_directory: ~/myapp/angular-wishlist
+  working_directory: ~/AngularMoulo3/angular-wishlist
   docker:
     - image: circleci/node:8-browsers
   steps:
