@@ -8,7 +8,7 @@ jobs:
     - checkout:
         path: ~/myapp
     - restore_cache:
-        key: angular-whishlist-{{ .Branch }}-{{checksum "package-lock.json"}}
+        key: angular-wishlist-{{ .Branch }}-{{checksum "package-lock.json"}}
     - run: npm install
     - save_cache:
         key: angular-whishlist-{{ .Branch }}-{{checksum "package-lock.json"}}
