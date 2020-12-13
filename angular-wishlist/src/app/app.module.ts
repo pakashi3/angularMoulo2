@@ -7,7 +7,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule, HttpClient, HttpRequest, HttpHeaders} from '@angular/common/http';
 import Dexie from 'dexie';
-import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+//import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { DestinoViajeComponent } from './components/destino-viaje/destino-viaje.component';
@@ -28,6 +30,8 @@ import { ReservasModule } from './reservas/reservas.module';
 import { from, Observable } from 'rxjs';
 import { DestinoViajes } from './models/destino-viaje.models';
 import { flatMap } from 'rxjs/operators';
+import { EspiameDirective } from './espiame.directive';
+import { TrackearClickDirective } from './trackear-click.directive';
 
 
 // app config
@@ -155,6 +159,8 @@ function HttpLoaderFactory(http: HttpClient) {
     VuelosMainComponentComponent,
     VuelosMasInfoComponentComponent,
     VuelosDetalleComponentComponent,
+    EspiameDirective,
+    TrackearClickDirective
  
 
   ],
@@ -173,7 +179,9 @@ function HttpLoaderFactory(http: HttpClient) {
         useFactory: (HttpLoaderFactory),
         deps: [HttpClient]
       }
-    })
+    }),
+    //NgxMapboxGLModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService, UsuarioLogueadoGuard, 
